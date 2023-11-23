@@ -3,12 +3,11 @@ $(function () {
 
   $(window).scroll(function(){
     curr = $(this).scrollTop()
-    target = $('.top-menu').offset().top
+    target = $('.header .top').offset().top
       html = `현재스크롤값: ${curr} <br>타겟의 스크롤값: ${target}`
-      console.log(html);
     if(curr >= 1){
       $('.top-banner').addClass('on')
-      $('.top-menu').addClass('on')
+      $('.header .top').addClass('on')
       $('.header').css({
         "background-color": "#fff",
         top: 0,
@@ -17,7 +16,7 @@ $(function () {
       })
     }else{
       $('.top-banner').removeClass('on')
-      $('.top-menu').removeClass('on')
+      $('.header .top').removeClass('on')
       $('.header').css({
         "background-color": "transparent",
         top: "40px",
@@ -28,17 +27,24 @@ $(function () {
   })
 
 
-  $('.top-menu .menu').click(function(){
+  $('.header .top .burgerBtn').click(function(){
     $('.gnb').addClass('isAct')
     $('.dimmed').show()
+
     // 왜 이러는걸까...
     $('.dimmed').on('scroll touchmove mousewheel', e => {
         e.preventDefault();
         e.stopPropagation();
     });
   })
-  $('.top-menu .search').click(function (params) {
-    $('.back-modal').show()
+
+
+  $('.header .top .search').click(function () {
+    $('.back-modal').addClass("on")
+  })
+
+  $(".close_search").click(function(){
+     $('.back-modal').removeClass("on")
   })
 
   $(document).click(function(e){
@@ -52,30 +58,34 @@ $(function () {
     $('.dimmed').hide()
   })
 
-  $('.best-menu').click(function (params) {
-    const allMenu = 
-    `<li>
-      <a href="">테니스</a>
-    </li>
-    <li>
-      <a href="">A.R.M</a>
-    </li>
-    <li>
-      <a href="">요기니 요가복</a>
-    </li>
-    <li>
-      <a href="">홈트용품&액세서리</a>
-    </li>
-    <li>
-      <a href="">서스테이너블</a>
-    </li>`
-    if($(this).hasClass('on')){
-      $('.best-menu').removeClass('on').children('.all-menu').stop().slideUp()
-    }else{
-        $('.best-menu').removeClass('on').children('.all-menu').stop().slideUp()
-      $(this).addClass('on').children('.all-menu').stop().slideDown()
-      $('.menu-list').append(allMenu)
-    }
+  // $('.best-menu').click(function (params) {
+  //   const allMenu = 
+  //   `<li>
+  //     <a href="">테니스</a>
+  //   </li>
+  //   <li>
+  //     <a href="">A.R.M</a>
+  //   </li>
+  //   <li>
+  //     <a href="">요기니 요가복</a>
+  //   </li>
+  //   <li>
+  //     <a href="">홈트용품&액세서리</a>
+  //   </li>
+  //   <li>
+  //     <a href="">서스테이너블</a>
+  //   </li>`
+  //   if($(this).hasClass('on')){
+  //     $('.best-menu').removeClass('on').children('.all-menu').stop().slideUp()
+  //   }else{
+  //       $('.best-menu').removeClass('on').children('.all-menu').stop().slideUp()
+  //     $(this).addClass('on').children('.all-menu').stop().slideDown()
+  //     $('.menu-list').append(allMenu)
+  //   }
+  // })
+
+  $(".header .bottom .all-btn").click(function(){
+    $(this).toggleClass("on")
   })
 
   $('.nav-item .title').click(function (params) {
@@ -107,6 +117,7 @@ $(function () {
 
 
   const mainSlide = new Swiper('.section-visual .swiper',{
+    effect: "fade",
     navigation : {
       nextEl: ".next",
       prevEl: ".prev"
@@ -114,10 +125,10 @@ $(function () {
     pagination :{
       el: '.pagination',
     },
-    // autoplay:{
-    // delay: 3000,
-    // },
-    // loop: true,
+    autoplay:{
+      delay: 5000,
+    },
+    loop: true,
   } )
 
   const regginsSlide = new Swiper('.section-reggings .swiper',{

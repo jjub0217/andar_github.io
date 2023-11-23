@@ -26,10 +26,8 @@
 }
 
 .section-visual {
-
-
   .swiper {
-    height: 1163px;
+    height: calc(100vh - 40px - 100px);
     width: 100vw;
 
     .swiper-slide {
@@ -52,7 +50,7 @@
           bottom: 0;
           width: 100%;
           height: auto;
-          padding: 20% 7.5%;
+          padding: 100px 37px;
           color: #fff;
 
           em {
