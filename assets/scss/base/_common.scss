@@ -1,0 +1,26 @@
+.blind {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+
+.link-detail {
+  border: 1px solid #222;
+  font-size: 12px;
+  width: 125px;
+  height: 40px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.link-detail:hover {
+  background: #222;
+  color: #fff;
+}
