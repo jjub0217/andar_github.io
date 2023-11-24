@@ -58,34 +58,17 @@ $(function () {
     $('.dimmed').hide()
   })
 
-  // $('.best-menu').click(function (params) {
-  //   const allMenu = 
-  //   `<li>
-  //     <a href="">테니스</a>
-  //   </li>
-  //   <li>
-  //     <a href="">A.R.M</a>
-  //   </li>
-  //   <li>
-  //     <a href="">요기니 요가복</a>
-  //   </li>
-  //   <li>
-  //     <a href="">홈트용품&액세서리</a>
-  //   </li>
-  //   <li>
-  //     <a href="">서스테이너블</a>
-  //   </li>`
-  //   if($(this).hasClass('on')){
-  //     $('.best-menu').removeClass('on').children('.all-menu').stop().slideUp()
-  //   }else{
-  //       $('.best-menu').removeClass('on').children('.all-menu').stop().slideUp()
-  //     $(this).addClass('on').children('.all-menu').stop().slideDown()
-  //     $('.menu-list').append(allMenu)
-  //   }
-  // })
 
   $(".header .bottom .all-btn").click(function(){
-    $(this).toggleClass("on")
+    if($(this).hasClass('on')){
+      $(this).removeClass('on').siblings('.all-title').removeClass("on")
+      $(".all-menu").stop().slideUp()
+      $(".best-menu-list").removeClass("fade")
+    }else{
+      $(this).addClass('on').siblings('.all-title').addClass("on")
+      $(".all-menu").stop().slideDown()
+      $(".best-menu-list").addClass("fade")
+    }
   })
 
   $('.nav-item .title').click(function (params) {

@@ -82,7 +82,6 @@
 }
 
 .header {
-
   position: fixed;
   top: 40px;
   left: 0;
@@ -91,7 +90,6 @@
   z-index: 2;
   height: 50px;
   overflow: hidden;
-
 
   .top {
     position: relative;
@@ -143,7 +141,6 @@
       }
     }
 
-
     &.on {
 
       .logo,
@@ -170,68 +167,96 @@
   .bottom {
     position: relative;
 
+    ul {
+      li {
+        &:nth-child(1) {
+          a {
+            color: #E55427;
+          }
+        }
+      }
+    }
+
     .best-menu {
       display: flex;
       flex-direction: column;
       position: relative;
       padding: 10px 15px;
+      height: 43px;
 
-      .menu-list {
+
+      &-list {
         display: flex;
-        gap: 10px;
+        gap: 12px;
+        width: calc(100% - 30px);
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        line-height: 23px;
 
-        .menu-item {
-          &:nth-child(1) {
-            color: #E55427;
-          }
+        &.fade {
+          display: none;
+        }
+
+        &::-webkit-scrollbar {
+          display: none;
         }
       }
+    }
 
-      &.on {
+    .all {
+      &-menu {
+        display: none;
+        background: #F6F6F6;
 
-        .group-flex {
-          border-top: 1px solid #dcdcdc;
-          padding: 7px 12px;
-          background: #F6F6F6;
+        &-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          padding: 6px 12px;
+        }
 
-          ul {
-            gap: 0px;
-          }
-
-          li {
-            display: inline-block;
-            padding: 8px 17px;
-            margin: 3px 3px;
-            border: 1px solid #ebebeb;
+        &-item {
+          a {
+            display: block;
             border-radius: 100px;
-            box-sizing: border-box;
-            background: #fff;
+            border: 1px solid #ebebeb;
+            padding: 7px 16px;
             font-size: 14px;
-            line-height: 20px;
-            color: #000;
+            background: #fff;
             letter-spacing: -0.05em;
           }
         }
       }
-    }
 
-    .all-btn {
-      position: absolute;
-      top: 10px;
-      transform: translateY(26%);
-      right: 15px;
-      width: 15px;
-      height: 15px;
-      background: url("../images/btn_open_middle.png") no-repeat center / contain;
+      &-title {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
 
-      &.on {
-        transform: rotate(180deg);
-        top: 15px;
+        &.on {
+          display: block;
+        }
+      }
+
+      &-btn {
+        position: absolute;
+        top: 10px;
+        transform: translateY(26%);
+        right: 15px;
+        width: 15px;
+        height: 15px;
+        background: url("../images/btn_open_middle.png") no-repeat center / contain;
+
+        &.on {
+          transform: rotate(180deg);
+          top: 15px;
+        }
       }
     }
   }
-
-
 }
 
 
