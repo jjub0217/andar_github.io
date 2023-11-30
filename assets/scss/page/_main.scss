@@ -9,7 +9,6 @@
     line-height: 1;
     font-weight: 700;
     letter-spacing: -0.05em;
-    font-family: var(--font-en);
     padding: 50px 16px 22px;
   }
 }
@@ -158,24 +157,29 @@
       font-weight: 500;
       padding: 6px 0 22px;
 
-      .tab-item.on {
-        color: #fff;
-        background: #B75622;
-        border-radius: 60px;
-        padding: 9px 10px;
-      }
-
       .tab-item {
         color: #888888;
+
+        &.on {
+          color: #fff;
+          background: #B75622;
+          border-radius: 60px;
+          padding: 9px 10px;
+        }
       }
+
     }
   }
 
   .best-list {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
+
+    &.on {
+      display: grid;
+    }
 
     .best-item {
       position: relative;
@@ -262,22 +266,11 @@
       }
     }
 
-    .best-item.ice-item {
+
+    .best-item {
       position: relative;
 
-      .ice {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 16%;
-      }
-    }
-
-    .best-item.new-ice-item {
-      position: relative;
-
-
-      .new {
+      .item {
         position: absolute;
         top: 0;
         right: 0;

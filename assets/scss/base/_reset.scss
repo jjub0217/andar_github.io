@@ -26,8 +26,6 @@
   -moz-tab-size: 4;
   tab-size: 4;
 
-  --font-en: 'Montserrat', 'Noto Sans KR', sans-serif;
-  --font-kr: 'Noto Sans KR', sans-serif;
 }
 
 * {
@@ -35,6 +33,7 @@
   padding: 0;
   font: inherit;
   color: inherit;
+
 }
 
 * {
@@ -85,7 +84,8 @@ ul {
 /* 세팅 */
 body {
   /* 기본적인 국문의 폰트패밀리 적용 */
-  font-family: var(--font-kr);
+
+  font-family: 'Gilroy', 'NotoSansKR', Malgun Gothic, '맑은 고딕', Dotum, '돋움', sans-serif;
   color: #222222;
   letter-spacing: -0.025em;
 }

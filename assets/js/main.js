@@ -49,33 +49,28 @@ $(function () {
     $("body").removeClass("scroll-hide")
   })
 
+  
+  /**
+   * @best섹션내의tab이동으로보여지는리스트다르게
+   * 
+   */
+  $(".section-best .tab-area .tab-item").click(function(e){
+    e.preventDefault()
+    tabId = $(this).data('tab');
+    console.log(tabId);
 
-
-  $('.nav-item .title').click(function (params) {
-    if($(this).hasClass('on')){
-      $(this).removeClass('on').siblings('.sub-list').stop().slideUp()
-    }else{
-      $(this).addClass('on').siblings('.sub-list').stop().slideDown()
-    }
-  })
-
-  $('.service-item .title').click(function (params) {
-    if($(this).hasClass('on')){
-      $(this).removeClass('on').siblings('.sub-list').stop().slideUp()
-    }else{
-      $(this).addClass('on').siblings('.sub-list').stop().slideDown()
-    }
+    $(this).addClass('on').siblings().removeClass('on');
+    $(tabId).addClass('on').siblings().removeClass('on');
   })
 
 
-
-
-  const iceItem = `<img src="./assets/images/ice-item.png" class="ice" alt="여름용 쿨상품">`
-  $('.best-item.ice-item .link-item.item').prepend(iceItem)
-
-  const newItem = `<img src="./assets/images/ice-new-item.png" class="new">`
-  $('.best-item.new-ice-item .link-item.item').prepend(newItem)
-
+  /**
+   * @gnb영역내에서서브리스트보여지는기능
+   * 
+   */
+  $('.nav-item .title').click(function () {
+    $(this).toggleClass("on").siblings('.sub-list').stop().slideToggle()
+  })
 
 
 

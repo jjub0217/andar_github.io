@@ -1,8 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
-@import url('./reset.css');
-@import url('./common.css');
-
-
 .dimmed {
   position: fixed;
   left: 0;
@@ -148,10 +143,24 @@
         display: inline-block;
         width: 19px;
         height: 18px;
+        position: relative;
 
-        &::after {
-          content: "";
+        .count {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          background: #000;
+          border-radius: 100%;
+          top: -4px;
+          left: 13px;
+          font-size: 12px;
+          color: #fff;
+          font-weight: bold;
         }
+
       }
 
       .link-my {
@@ -322,25 +331,47 @@
     }
   }
 
-  .inner2 {
-    padding: 20px 16px 11px;
+  .menu-area {
+    padding: 11px 16px;
 
     .nav-list {
       padding-bottom: 11px;
       border-bottom: 1px solid #ddd;
 
+      &:nth-child(2) {
+        padding: 18px 0px 11px;
+
+        .nav-item {
+          &:nth-child(1) {
+            .title {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .sub-list {
+          .sub-item {
+            line-height: 20px;
+            color: #888;
+            font-weight: 500;
+            font-size: 16px;
+          }
+        }
+      }
+
       .nav-item {
         line-height: 1;
 
         .title {
-          padding: 11px 0;
-          line-height: 1;
-          color: #333;
-          font-weight: 500;
-
           display: flex;
           align-items: center;
           justify-content: space-between;
+          padding: 11px 0;
+          line-height: 1;
+          color: #333;
+          font-weight: 600;
 
           &::after {
             content: "";
@@ -381,64 +412,6 @@
       }
     }
 
-    .service-list {
-      padding: 18px 0px 11px;
-      border-bottom: 1px solid #ddd;
-
-      .service-item {
-        line-height: 1;
-        color: #333;
-        font-weight: 500;
-
-        a {
-          display: inline-block;
-          padding: 9px 0;
-        }
-
-        .title {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          line-height: 1;
-          padding: 13px 0;
-
-          &::after {
-            content: "";
-            display: block;
-            width: 24px;
-            height: 24px;
-            background: url("../images/btn_open.png") no-repeat;
-            cursor: pointer;
-          }
-
-          &.on {
-            &::after {
-              content: "";
-              display: block;
-              width: 24px;
-              height: 24px;
-              background: url("../images/btn_open.png") no-repeat;
-              transform: rotate(180deg);
-              margin-right: -5px;
-              cursor: pointer;
-            }
-          }
-        }
-
-        .sub-list {
-          display: none;
-
-          .sub-item {
-            line-height: 20px;
-            color: #888;
-            font-weight: 400;
-          }
-        }
-
-      }
-
-
-    }
 
     .section-event {
       .headline {
