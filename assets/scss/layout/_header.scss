@@ -88,8 +88,24 @@
   right: 0;
   background-color: transparent;
   z-index: 2;
-  height: 50px;
   overflow: hidden;
+
+  &.scrollTop {
+    top: 0;
+    background: #fff;
+
+    .top {
+      svg {
+        path {
+          fill: #000
+        }
+      }
+    }
+
+    .bottom {
+      display: block;
+    }
+  }
 
   .top {
     position: relative;
@@ -97,7 +113,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
-    padding: 15px;
+    padding: 19.5px 15px;
 
     .logo {
       position: absolute;
@@ -132,6 +148,10 @@
         display: inline-block;
         width: 19px;
         height: 18px;
+
+        &::after {
+          content: "";
+        }
       }
 
       .link-my {
@@ -140,32 +160,11 @@
         height: 18px;
       }
     }
-
-    &.on {
-
-      .logo,
-      .burgerBtn,
-      .search,
-      .link-bag,
-      .link-my {
-        svg {
-          path {
-            fill: #000
-          }
-        }
-      }
-
-      // &.isAct {
-      //   &::before {
-      //     filter: brightness(0.4);
-      //   }
-      // }
-
-    }
   }
 
   .bottom {
     position: relative;
+    display: none;
 
     ul {
       li {
@@ -180,27 +179,33 @@
     .best-menu {
       display: flex;
       flex-direction: column;
-      position: relative;
       padding: 10px 15px;
       height: 43px;
 
 
       &-list {
         display: flex;
-        gap: 12px;
-        width: calc(100% - 30px);
+        gap: 10px;
+        width: calc(100% - 16px);
         overflow-x: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
         line-height: 23px;
 
-        &.fade {
-          display: none;
-        }
-
         &::-webkit-scrollbar {
           display: none;
         }
+      }
+    }
+
+    &.show {
+      .best-menu-list {
+        // visibility: hidden;
+        display: none;
+      }
+
+      .all-title {
+        display: block;
       }
     }
 
@@ -213,7 +218,7 @@
           display: flex;
           flex-wrap: wrap;
           gap: 6px;
-          padding: 6px 12px;
+          padding: 11px 12px;
         }
 
         &-item {
@@ -231,14 +236,6 @@
 
       &-title {
         display: none;
-        position: absolute;
-        top: 50%;
-        left: 15px;
-        transform: translateY(-50%);
-
-        &.on {
-          display: block;
-        }
       }
 
       &-btn {
@@ -247,8 +244,9 @@
         transform: translateY(26%);
         right: 15px;
         width: 15px;
-        height: 15px;
-        background: url("../images/btn_open_middle.png") no-repeat center / contain;
+        height: 12px;
+        background: url("../images/btn_open_middle.png") no-repeat center / 12px;
+
 
         &.on {
           transform: rotate(180deg);

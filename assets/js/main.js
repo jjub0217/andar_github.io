@@ -3,73 +3,53 @@ $(function () {
 
   $(window).scroll(function(){
     curr = $(this).scrollTop()
-    target = $('.header .top').offset().top
-      html = `현재스크롤값: ${curr} <br>타겟의 스크롤값: ${target}`
-    if(curr >= 1){
-      $('.top-banner').addClass('on')
-      $('.header .top').addClass('on')
-      $('.header').css({
-        "background-color": "#fff",
-        top: 0,
-        height: "auto",
-        overflow: "auto"
-      })
+    if(curr > 0){
+      $(".header").addClass("scrollTop")
     }else{
-      $('.top-banner').removeClass('on')
-      $('.header .top').removeClass('on')
-      $('.header').css({
-        "background-color": "transparent",
-        top: "40px",
-        height: "50px",
-        overflow: "hidden"
-      })
+      $(".header").removeClass('scrollTop')
     }
   })
 
 
-  $('.header .top .burgerBtn').click(function(){
-    $('.gnb').addClass('isAct')
-    $('.dimmed').show()
-
-    // 왜 이러는걸까...
-    $('.dimmed').on('scroll touchmove mousewheel', e => {
-        e.preventDefault();
-        e.stopPropagation();
-    });
-  })
-
-
-  $('.header .top .search').click(function () {
-    $('.back-modal').addClass("on")
-  })
-
-  $(".close_search").click(function(){
-     $('.back-modal').removeClass("on")
-  })
-
-  $(document).click(function(e){
-    if($('.gnb').has(e.target).length === 0 &&e.target.className === 'dimmed'){
-      $('.gnb').removeClass('isAct')
-      $('.dimmed').hide()
-    } 
-  })
-  $('.menu-close-btn').click(function(){
-    $('.gnb').removeClass('isAct')
-    $('.dimmed').hide()
-  })
+  // 어떠한 이벤트가 발생했을때 새로고침시, 해당 이벤트가 그대로 발생되어있게끔 강제로 해주는 기능이 trigger
+  $(window).trigger("scroll")
 
 
   $(".header .bottom .all-btn").click(function(){
-    if($(this).hasClass('on')){
-      $(this).removeClass('on').siblings('.all-title').removeClass("on")
-      $(".all-menu").stop().slideUp()
-      $(".best-menu-list").removeClass("fade")
-    }else{
-      $(this).addClass('on').siblings('.all-title').addClass("on")
-      $(".all-menu").stop().slideDown()
-      $(".best-menu-list").addClass("fade")
-    }
+    $(".header .bottom").toggleClass("show")
+    $(".header .bottom .all-menu").stop().slideToggle()
   })
+
+
+  /**
+   * @검색팝업
+   * 
+   */
+  $('.header .top .search').click(function () {
+    $('.back-modal').addClass("on")
+  })
+  $(".close_search").click(function(){
+    $('.back-modal').removeClass("on")
+  })
+
+
+
+  /**
+   * @gnb메뉴열기
+   * 
+   */
+  $('.header .top .burgerBtn').click(function(){
+    $('.gnb').addClass('isAct')
+    $('.dimmed').show()
+    $("body").addClass("scroll-hide")
+  })
+  $('.menu-close-btn, .dimmed').click(function(){
+    $('.gnb').removeClass('isAct')
+    $('.dimmed').hide()
+    $("body").removeClass("scroll-hide")
+  })
+
+
 
   $('.nav-item .title').click(function (params) {
     if($(this).hasClass('on')){
@@ -99,6 +79,15 @@ $(function () {
 
 
 
+
+  const adSlide = new Swiper('.section-ad .swiper',{
+    effect: "fade",
+    autoplay:{
+      delay: 4000,
+    },
+    loop: true,
+  })
+  
   const mainSlide = new Swiper('.section-visual .swiper',{
     effect: "fade",
     navigation : {

@@ -12,16 +12,57 @@
     font-family: var(--font-en);
     padding: 50px 16px 22px;
   }
+}
 
-  .top-banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    font-size: 13px;
-    background: #030303;
-    color: #fff;
-    font-weight: 400;
+.section-ad {
+  .swiper {
+    &-wrapper {
+      display: flex;
+    }
+
+    &-slide {
+      background: #030303;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 13px;
+        height: 13px;
+        background: url("../images/arrow_wh.png") no-repeat;
+        background-position: center;
+      }
+
+      .top-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        color: #fff;
+        font-weight: 400;
+
+        strong {
+          font-weight: bold;
+        }
+      }
+
+      .channel-btn {
+        width: 17px;
+        height: 18px;
+        background: url("../images/channel.png") no-repeat;
+        background-size: cover;
+        margin-top: 7px;
+
+        &::after {
+          margin-left: 17px;
+          background-position: 0px -6px;
+        }
+      }
+    }
   }
 }
 
@@ -74,6 +115,7 @@
 
 
     .pagination {
+      display: flex;
       position: absolute;
       bottom: 35px;
       top: auto;
