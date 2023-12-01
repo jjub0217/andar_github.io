@@ -73,6 +73,10 @@ $(function () {
   })
 
 
+  $(".review").click(function(){
+    console.log("리뷰");
+  })
+
 
 
   const adSlide = new Swiper('.section-ad .swiper',{
