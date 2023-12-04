@@ -27,10 +27,9 @@
     }
 
     &.type2 {
-      padding: 40px 10px 30px;
+      padding: 20px 16px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
     }
   }
 
@@ -67,6 +66,7 @@
         top: 0;
         right: 0;
         width: 16%;
+        min-width: 38px;
       }
     }
 
@@ -78,23 +78,22 @@
       display: flex;
       gap: 28px;
       position: relative;
+      padding: 20px 0;
 
-      &:nth-child(1) {
-        padding-bottom: 20px;
-        border-bottom: 1px solid #eee;
+      &+.product-item {
+        border-top: 1px solid #eee;
       }
 
       .image-box {
-        width: 18%;
+        max-width: 110px;
       }
 
       .text-box {
-        line-height: 26px;
         flex: 1;
+        line-height: 26px;
         justify-content: start;
-        padding-left: 0;
-        padding-top: 5px;
-        padding-bottom: 0;
+        padding: 0;
+        padding-top: 7px;
         gap: 10px;
       }
     }
@@ -197,6 +196,16 @@ section {
     font-weight: 500;
     font-size: 14px;
 
+    &::after {
+      content: "";
+      width: 19px;
+      height: 19px;
+      background: url("../images/btn_open.png") no-repeat;
+      background-size: 19px auto;
+      background-position: center;
+      transform: rotate(-90deg);
+    }
+
     span {
       color: #C86733;
     }
@@ -258,8 +267,8 @@ section {
 .section-visual {
 
   .swiper {
-    height: calc(100vh - 40px - 100px);
-    width: 100vw;
+    // height: calc(100vh - 40px - 100px);
+    height: 80vh;
 
     .swiper-slide {
       position: relative;
@@ -364,16 +373,37 @@ section {
 
 .section-banner {
   padding: 60px 0 0;
+  position: relative;
+
+  .pagination {
+    position: absolute;
+    top: 6px;
+    right: 12px;
+    left: initial;
+    bottom: auto;
+    z-index: 1;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.90);
+    padding: 2px 6px;
+    background-color: rgba(28, 28, 28, 0.70);
+    border-radius: 20px;
+  }
 }
 
 .section-lookbook {
 
   .content {
-    padding: 20px 0 12px;
-  }
+    margin: 20px 0 12px;
 
-  .text-box {
-    padding-bottom: 30px;
+    .link-lookbook {
+      .text-box {
+        padding: 20px 16px 30px;
+      }
+
+    }
   }
 
   .title {
@@ -398,7 +428,7 @@ section {
     line-height: 20px;
     letter-spacing: -0.03em;
     font-weight: 500;
-    margin: 0px 10px;
+    margin: 0px 16px;
   }
 }
 
@@ -471,13 +501,13 @@ section {
   }
 }
 
-.section-reggings,
-.section-bratop,
-.section-set {
+.section-cateProduct {
   position: relative;
 
   .headline {
     text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .swiper {
@@ -499,11 +529,9 @@ section {
 
 .section-membership,
 .section-store {
-  padding: 65px 20px;
   width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
 
   .headline {
     font-size: 26px;
@@ -513,6 +541,17 @@ section {
     color: #fff;
     text-align: left;
     padding: 0;
+
+  }
+
+  .image-box {
+    position: absolute;
+    top: -19.5%;
+  }
+
+  .text-box {
+    position: relative;
+    padding: 56px 20px;
   }
 
   .desc {
@@ -531,14 +570,11 @@ section {
     letter-spacing: -0.03em;
     color: #fff;
     border: 1px solid #fff;
+    width: fit-content;
   }
 }
 
-.section-membership {
-  background-image: url("../images/banner-member.jpg");
-}
 
 .section-store {
   margin-top: 10px;
-  background-image: url("../images/banner-store.jpg");
 }

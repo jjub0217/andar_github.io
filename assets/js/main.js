@@ -16,6 +16,7 @@ $(function () {
 
 
   $(".header .bottom .all-btn").click(function(){
+    $(this).toggleClass("on")
     $(".header .bottom").toggleClass("show")
     $(".header .bottom .all-menu").stop().slideToggle()
   })
@@ -73,11 +74,6 @@ $(function () {
   })
 
 
-  $(".review").click(function(){
-    console.log("리뷰");
-  })
-
-
 
   const adSlide = new Swiper('.section-ad .swiper',{
     effect: "fade",
@@ -87,6 +83,7 @@ $(function () {
     loop: true,
   })
   
+
   const mainSlide = new Swiper('.section-visual .swiper',{
     effect: "fade",
     navigation : {
@@ -102,18 +99,22 @@ $(function () {
     loop: true,
   } )
 
-  const regginsSlide = new Swiper('.section-reggings .swiper',{
-      slidesPerView: "auto",
+  const bannerSlide = new Swiper('.section-banner .swiper',{
+    pagination: {
+      el: ".pagination",
+      type: "fraction",
+    },
+    autoplay:{
+      delay: 4000,
+    },
+    loop: true,
+  })
+  
+  const bestCateSlide = new Swiper('.section-bestCate .swiper',{
+      slidesPerView: 2.2,
       spaceBetween: 10,
   })
-  const bratopSlide = new Swiper('.section-bratop .swiper',{
-      slidesPerView: "auto",
-      spaceBetween: 10,
-  })
-  const setSlide = new Swiper('.section-set .swiper',{
-    slidesPerView: "auto",
-    spaceBetween: 10,
-  })
+
 
 })
 
