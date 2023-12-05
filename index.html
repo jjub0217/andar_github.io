@@ -40,7 +40,6 @@
         </h1>
 
         <div class="group-flex">
-
           <button class="burgerBtn">
             <span class="blind">메뉴</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
@@ -184,12 +183,14 @@
               <a href="" class="link-login">로그인</a>
               <a href="">회원가입</a>
             </div>
-            <p>로그인 하고,<span>&nbsp;회원 전용 혜택</span>&nbsp;확인하기</p>
+            <p class="desc">로그인 하고,<span>&nbsp;회원 전용 혜택</span>&nbsp;확인하기</p>
           </div>
           <div class="menu-area">
             <ul class="nav-list">
               <li class="nav-item">
-                <a href="" class="title"><span>블프 ~80%</span></a>
+                <a href="" class="title">
+                  <span class="link-season point">블프 ~80%</span>
+                </a>
                 <ul class="sub-list">
                   <li class="sub-item">
                     <a href="">전체</a>
@@ -226,7 +227,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="" class="title"><span>신상</span></a>
+                <a href="" class="title"><span class="point">신상</span></a>
                 <ul class="sub-list">
                   <li class="sub-item">
                     <a href="">전체</a>
@@ -331,7 +332,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="" class="title"><span>주니어</span></a>
+                <a href="" class="title"><span class="point">주니어</span></a>
                 <ul class="sub-list">
                   <li class="sub-item">
                     <a href="">전체</a>
@@ -359,7 +360,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="" class="title"><span>상품권</span></a>
+                <a href="" class="title"><span class="point">상품권</span></a>
                 <ul class="sub-list">
                   <li class="sub-item">
                     <a href="">전체</a>
@@ -552,16 +553,19 @@
               <h2 class="headline">이벤트</h2>
               <div class="content">
                 <h3 class="blind">시즌오프 이벤트 상품</h3>
-                <a href="">
-                  <div class="image-box">
-                    <img src="./assets/images/event1.jpg" alt>
-                  </div>
-                  <div class="text-box">
+                <a href="" class="link-item">
+                  <span class="blind">상품 링크</span>
+                </a>
+                <div class="image-box">
+                  <img src="./assets/images/event1.jpg" alt>
+                </div>
+                <div class="text-box">
+                  <div class="text">
                     <em>썸머 시즌오프 UP TO 80%</em>
                     <p>올여름 마지막 쇼핑 찬스</p>
                   </div>
-                  <button class="btn-more">전체 →</button>
-                </a>
+                  <span class="btn-more">전체 →</span>
+                </div>
               </div>
               <div class="content">
                 <h3 class="blind">워터컬렉션 이벤트 상품</h3>
@@ -570,10 +574,12 @@
                     <img src="./assets/images/event2.jpg" alt>
                   </div>
                   <div class="text-box">
-                    <em>안다르 워터 컬렉션</em>
-                    <p>액티브한 고기능성과 하이엔드 감성의 만남</p>
+                    <div class="text">
+                      <em>안다르 워터 컬렉션</em>
+                      <p>액티브한 고기능성과 하이엔드 감성의 만남</p>
+                    </div>
+                    <span class="btn-more">전체 →</span>
                   </div>
-                  <button class="btn-more">전체 →</button>
                 </a>
               </div>
             </section>
@@ -583,23 +589,24 @@
             </div>
             <section class="section-recent">
               <h2 class="headline">최근 본 상품</h2>
+
               <ul>
                 <li>
                   <a href="">
                     <span class="blind">최근 본 상품 첫번째</span>
-                    <img src="./assets/images/reggins1.jpg" alt>
+                    <img src="./assets/images/reggins1.jpg" alt="레깅스">
                   </a>
                 </li>
                 <li>
                   <a href="">
                     <span class="blind">최근 본 상품 두번째</span>
-                    <img src="./assets/images/reggins1.jpg" alt=>
+                    <img src="./assets/images/set1.jpg" alt="세트상품">
                   </a>
                 </li>
                 <li>
                   <a href="">
                     <span class="blind">최근 본 상품 두번째</span>
-                    <img src="./assets/images/reggins1.jpg" alt=>
+                    <img src="./assets/images/best-womans1.jpg" alt="기모용품">
                   </a>
                 </li>
               </ul>
@@ -1307,7 +1314,7 @@
         </div>
       </section>
 
-      <section class="section-lookbook">
+      <section class="section-lookBook">
         <h2 class="blind">andar lookbook</h2>
         <div class="content">
           <a href="" class="link-lookbook">
@@ -1318,7 +1325,7 @@
               <em>액티브한 고기능성에<br>하이엔드 감성을 더한 스윔에어</em>
               <p class="desc">자외선 차단 래쉬가드부터 고급스런 비키니까지.<br>안다르와 휴양지에서 인생샷 남겨요.</p>
             </div>
-            <p class="btn-more">보러가기</p>
+            <span class="btn-more">보러가기</span>
           </a>
 
           <ul class="product-list type2">
