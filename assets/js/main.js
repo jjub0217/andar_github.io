@@ -32,6 +32,15 @@ $(function () {
     $(".header .bottom .all-menu").stop().slideToggle()
   })
 
+  console.log($(".review"));
+$(".review").click(function(e){
+  e.preventDefault()
+  console.log('리뷰');
+})
+$(".link-item").click(function(e){
+  e.preventDefault()
+  console.log('아이템링크');
+})
 
   /**
    * @검색팝업
