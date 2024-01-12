@@ -5,7 +5,7 @@ $(function () {
    * 
    */
   $(window).scroll(function(){
-    curr = $(this).scrollTop()
+    let curr = $(this).scrollTop()
     if(curr > 0){
       $(".header").addClass("scrollTop")
     }else{
@@ -32,7 +32,6 @@ $(function () {
     $(".header .bottom .all-menu").stop().slideToggle()
   })
 
-  console.log($(".review"));
 $(".review").click(function(e){
   e.preventDefault()
   console.log('리뷰');
@@ -81,8 +80,7 @@ $(".link-item").click(function(e){
    */
   $(".section-best .tab-area .tab-item").click(function(e){
     e.preventDefault()
-    tabId = $(this).data('tab');
-
+    let tabId = $(this).data('tab');
     $(this).addClass('on').siblings().removeClass('on');
     $(tabId).addClass('on').siblings().removeClass('on');
   })
@@ -156,7 +154,6 @@ $(".link-item").click(function(e){
       slidesPerView: 2.2,
       spaceBetween: 10,
   })
-
 })
 
 
