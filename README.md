@@ -20,9 +20,9 @@
 
 ## 프로젝트 웹접근성
 - Open-WAX 결과 : error 0
-<img src="https://github.com/jjub0217/jjub0217.github.io/assets/62126380/a79365e8-ad75-404b-a02d-a0157718b17a" width=500> <br>
+<img src="https://github.com/jjub0217/beautiful.github.io/assets/62126380/0f9f41f0-4da2-458b-89f0-2b16d965d493" width=270> <br>
 - WAVE 결과: error 0
-<img src="https://github.com/jjub0217/jjub0217.github.io/assets/62126380/482cfff8-9844-40af-bd96-88a07dbf7f13" width=500>
+<img src="https://github.com/jjub0217/beautiful.github.io/assets/62126380/7b4df600-c44e-4208-8c23-cd6b8db49c6d" width=500>
 
 
 ## 기술 스택
@@ -43,8 +43,9 @@
 | GSAP      | Standard License, Club GreenSock | 3.12.2ver 2023 GreenSock LLC              |
 
 ## 개선점
-- section-onlineEducation 영역의 tab item 을 클릭시에, floating-menu의 item의 텍스트 컬러도 바뀌는걸 놓쳐서 해당 디자인을 업데이트 하고 싶었음
-- 어떠한 교육을 북마크 아이콘을 클릭하여 저장하면, 서버에 저장되어있다가, 저장했던 교육은 북마크 다시 클릭했을때는 북마크 저장해제 기능을 구현하고 싶었다.(서버가 없으므로 구현 불가.)
+- 웹접근성을 더욱 지키기 위해 텍스트와 배경간의 명도 대비, 고대비 점수를 높이기
+- 리뷰 를 누르면 뜨는 리뷰모달까지 만들기(시간이 없어서 만들지 못함)
+- 웹접근성을 더욱 지키기 위해 aria 를 더 사용해보기
 
 
 ## 연락처
