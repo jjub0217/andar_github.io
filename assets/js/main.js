@@ -1,12 +1,13 @@
 function andarUI(){
 
+  window.dispatchEvent(new Event("scroll"));
+
   window.addEventListener("scroll", () => {
     document
       .querySelector(".header")
       .classList.toggle("scrollTop", window.scrollY > 0);
   });
 
-  window.dispatchEvent(new Event("scroll"));
 
   const allMenuBtn = document.querySelector(".all_menu_btn");
   const menuWrap = document.querySelector(".menu_wrap");
@@ -18,7 +19,6 @@ function andarUI(){
   const dimmed = document.querySelector(".dimmed");
   const tabItems = document.querySelectorAll(".tab_item_title");
   const tabContents = document.querySelectorAll(".section_best .product_list");
-  const linkItem = document.querySelectorAll(".link_item");
   const menuCloseButtons = document.querySelectorAll(".gnb_close_btn, .dimmed");
 
   allMenuBtn.onclick = (e) => {
@@ -56,7 +56,6 @@ function andarUI(){
       e.target.setAttribute("aria-expanded", isPressed ? "false" : "true");
       targetSubList.style.height = isPressed
         ? "0"
-        // : `${targetSubList.clientY}px`;
         : `${targetSubList.scrollHeight}px`;
     };
   });
@@ -77,6 +76,7 @@ function andarUI(){
     document.body.classList.toggle("scroll_hide", expand);
     burgerBtn.setAttribute("aria-expanded", expand);
     dimmed.classList.toggle("is_active", expand);
+    dimmed.setAttribute("aria-hidden", expand ? "false" : "true");
     gnb.classList.toggle("is_show", expand);
   };
 
@@ -106,15 +106,6 @@ function andarUI(){
         : tabContent.classList.remove("is_show");
     });
   };
-
-
-
-  linkItem.forEach((item) => {
-    item.onclick = (e) => {
-      e.preventDefault();
-      console.log(e.target);
-    };
-  });
 
 
   const createSwiper = (selector, options) => new Swiper(selector, options);

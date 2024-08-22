@@ -17,8 +17,9 @@
     <a href="#main">본문 바로가기</a>
   </div>
   <div class="wrapper">
-    <div class="dimmed">
+    <div class="dimmed" aria-hidden="true">
     </div>
+    <!-- [D] 스크롤 시 .header에 scrollTop 클래스를 추가하여 스타일 변경 -->
     <header class="header">
       <div class="logo_wrap">
         <h1 class="logo">
@@ -32,13 +33,18 @@
           </a>
         </h1>
         <div class="tools_area">
+          <!-- [D] 햄버거 버튼, 클릭 시 body에 scroll_hide 클래스를 추가하여 스크롤을 막음 -->
+          <!-- [D] 햄버거 버튼, 클릭 시 .dimmed 에 is_active 클래스 토글하여 화면을 어둡게 만듬 -->
+          <!-- [D] 햄버거 버튼, 클릭 시 .gnb 에 is_show 클래스 토글하여 .gnb 열림/닫힘-->
           <button class="burger_btn" aria-label="메뉴" aria-pressed="false" aria-expanded="false" type="button" aria-controls="gnb">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M20 0.5H0V2H20V0.5ZM20 7.75H0V9.25H20V7.75ZM0 15H16V16.5H0V15Z" fill="#fff" />
             </svg>
           </button>
-          <button class="search_btn" aria-label="검색" aria-pressed="false" aria-expanded="false" type="button" aria-controls="input_search_area">
+          <!-- [D] 검색 버튼, 클릭 시 검색 영역이 열리고 body에 scroll_hide 클래스를 추가하여 스크롤을 막음 -->
+          <!-- [D] 검색 버튼 클릭 시 검색 영역에 is_show 클래스 토글하여 검색 영역 열림/닫힘 -->
+          <button type="button" class="search_btn" aria-label="검색" aria-pressed="false" aria-expanded="false" aria-controls="input_search_area">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
               <path
                 d="M20 19.2906L15.1854 14.476C16.3833 12.9929 17.1135 11.1104 17.1135 9.05676C17.1135 4.33343 13.2801 0.5 8.55676 0.5C3.83343 0.5 0 4.33343 0 9.05676C0 13.7801 3.83343 17.6135 8.55676 17.6135C10.6104 17.6135 12.4929 16.8833 13.976 15.6854L18.7906 20.5L20 19.2906ZM1.71135 9.05676C1.71135 5.28038 4.78038 2.21135 8.55676 2.21135C12.3331 2.21135 15.4022 5.28038 15.4022 9.05676C15.4022 12.8331 12.3331 15.9022 8.55676 15.9022C4.78038 15.9022 1.71135 12.8331 1.71135 9.05676Z"
@@ -46,7 +52,7 @@
             </svg>
           </button>
         </div>
-        <div class="tools_area">
+        <div class="tools_area"> 
           <a href="" class="link_cart">
             <span class="blind">장바구니</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
@@ -107,7 +113,7 @@
           <button class="all_menu_btn" aria-label="전체메뉴열기" aria-pressed="false" aria-expanded="false" type="button" aria-controls="all_menu_area">
           </button>
         </div>
-        <div class="all_menu_area" id="all_menu_area">
+        <div id="all_menu_area" class="all_menu_area" >
           <ul class="all_menu_list">
             <li class="all_menu_item new_item season_item">
               <a href="">블프 ~80%</a>
@@ -160,15 +166,15 @@
           </ul>
         </div>
       </div>
-      <div class="input_search_area" id="input_search_area">
+      <div id="input_search_area" class="input_search_area" >
         <button class="search_area_close_btn" aria-label="닫기버튼">
         </button>
-        <input type="text" placeholder="검색어를 입력해주세요" aria-live="assertive" aria-atomic="false" id="search" class="input" title="검색어를 입력해주세요.">
+        <input type="text" id="search" class="input" title="검색어를 입력해주세요." placeholder="검색어를 입력해주세요" aria-live="assertive" aria-atomic="false" >
         <label for="search">
           <span class="blind">검색</span>
         </label>
       </div>
-      <nav class="gnb" id="gnb">
+      <nav id="gnb" class="gnb">
         <div class="login_wrap">
           <div class="login_link_area">
             <a href="" class="link_login">로그인</a>
@@ -179,7 +185,7 @@
         <div class="nav_area">
           <ul class="nav_list">
             <li class="nav_item">
-              <button class="nav_item_title season_item" aria-pressed="false" aria-expanded="false" type="button">
+              <button type="button" class="nav_item_title season_item" aria-pressed="false" aria-expanded="false" >
                 <span class="new_item">블프 ~80%</span>
               </button>
               <ul class="sub_list">
@@ -204,7 +210,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">베스트</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">베스트</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -218,7 +224,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">
                 <span class="new_item">신상</span>
               </button>
               <ul class="sub_list">
@@ -237,7 +243,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">우먼즈</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">우먼즈</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -281,7 +287,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">맨즈</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">맨즈</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -325,7 +331,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">
                 <span class="new_item">주니어</span>
               </button>
               <ul class="sub_list">
@@ -341,7 +347,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">기모</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">기모</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -355,7 +361,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">
                 <span class="new_item">상품권</span>
               </button>
               <ul class="sub_list">
@@ -371,7 +377,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">NEW 에어엑스퍼트</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">NEW 에어엑스퍼트</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -385,7 +391,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">워터 컬렉션</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">워터 컬렉션</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -399,7 +405,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">테니스</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">테니스</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -410,7 +416,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">A.R.M</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">A.R.M</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -421,7 +427,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">요기니 요가복</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">요기니 요가복</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -438,7 +444,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">홈트용품 / 악세사리</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">홈트용품 / 악세사리</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -461,7 +467,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">서스테이너블</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">서스테이너블</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">전체</a>
@@ -484,7 +490,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">안다르 라이브</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">안다르 라이브</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">골프</a>
@@ -500,7 +506,7 @@
               <a href="" class="nav_item_title">EVENT</a>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">고객지원</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">고객지원</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">자주 묻는 질문</a>
@@ -523,7 +529,7 @@
               </ul>
             </li>
             <li class="nav_item">
-              <button class="nav_item_title" aria-pressed="false" aria-expanded="false" type="button">안다르 스토리</button>
+              <button type="button" class="nav_item_title" aria-pressed="false" aria-expanded="false">안다르 스토리</button>
               <ul class="sub_list">
                 <li class="sub_item">
                   <a href="">안다르 매거진</a>
@@ -589,7 +595,7 @@
             <a href="" class="link_all">전체보기</a>
           </article>
         </div>
-        <button class="gnb_close_btn" aria-label="메뉴닫기" aria-pressed="false" type="button">
+        <button type="button" class="gnb_close_btn" aria-label="메뉴닫기" aria-pressed="false">
         </button>
       </nav>
     </header>
@@ -744,23 +750,24 @@
       <section class="section_best">
         <h2 class="headline">BEST</h2>
         <div class="tab_area">
-          <ul class="tab_list" role="tablist">
+          <ul role="tablist" class="tab_list" >
             <li role="none">
-              <button class="tab_item_title" role="tab" aria-controls="best1" aria-selected="true">전체</button>
+                <!-- [D] 탭 버튼, 클릭 시 선택된 탭에 따라 해당 상품 목록 .product_list 에 .is_show 클래스를 토글하여 컨텐츠 열림/닫힘 -->
+              <button role="tab" class="tab_item_title" aria-controls="best1" aria-selected="true">전체</button>
             </li>
             <li role="none">
-              <button class="tab_item_title" role="tab" aria-controls="best2" aria-selected="false">우먼즈</button>
+              <button role="tab" class="tab_item_title" aria-controls="best2" aria-selected="false">우먼즈</button>
             </li>
             <li role="none">
-              <button class="tab_item_title" role="tab" aria-controls="best3" aria-selected="false">맨즈</button>
+              <button role="tab" class="tab_item_title" aria-controls="best3" aria-selected="false">맨즈</button>
             </li>
             <li role="none">
-              <button class="tab_item_title" role="tab" aria-controls="best4" aria-selected="false">홈트용품 & ACC</button>
+              <button role="tab" class="tab_item_title" aria-controls="best4" aria-selected="false">홈트용품 & ACC</button>
             </li>
           </ul>
         </div>
-        <div class="best_contents" role="tabpanel">
-          <ul class="product_list is_show" id="best1">
+        <div role="tabpanel" class="best_contents" >
+          <ul id="best1" class="product_list is_show" >
             <li class="product_item">
               <a href="" class="link_item">
                 <div class="text_box">
@@ -791,7 +798,6 @@
             </li>
             <li class="product_item">
               <a href="" class="link_item">
-                <span class="blind">2위</span>
                 <div class="text_box">
                   <h3 class="title">[1+1] 에어쿨링 지니 바이커 5부 레깅스</h3>
                   <div class="price_area">
@@ -820,7 +826,6 @@
             </li>
             <li class="product_item">
               <a href="" class="link_item">
-                <span class="blind">3위</span>
                 <div class="text_box">
                   <h3 class="title">PK 서스테이너블 맨즈 폴로 숏슬리브</h3>
                   <div class="price_area">
@@ -849,7 +854,6 @@
             </li>
             <li class="product_item">
               <a href="" class="link_item">
-                <span class="blind">4위</span>
                 <div class="text_box">
                   <h3 class="title">[1&1] 에어리핏 맨즈 폴로 티셔츠</h3>
                   <div class="price_area">
